@@ -43,8 +43,8 @@ import UIKit
             }
         }
         updateFontAttributes { (state, font) in
-            var attributes = titleTextAttributes(for: state) ?? [:]
-            attributes[NSFontAttributeName] = font
+            var attributes = titleTextAttributes(for: state) as! [NSAttributedStringKey: Any]? ?? [:]
+            attributes[NSAttributedStringKey.font] = font
             setTitleTextAttributes(attributes, for: state)
         }
     }
